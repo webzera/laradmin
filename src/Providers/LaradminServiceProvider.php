@@ -21,7 +21,7 @@ class LaradminServiceProvider extends ServiceProvider
 	}
 	private function registerPublishables()
 	{
-		$bashPath = dirname(__DIR__);
+		$bashPath = dirname(__DIR__,2);
 
 		$arrPublishable = [
 			'migrations' => [

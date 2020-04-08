@@ -8,7 +8,7 @@ class LaradminController extends Controller
 {
 	public function index()
 	{
-		return view('admin::index');		
+		return view('admin::adminuser.adminlist');		
 	}
 
 	public function test()
