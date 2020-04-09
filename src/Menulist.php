@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace Webzera\Laradmin;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\Page;
+use Webzera\Laradmin\Page;
 
 class Menulist extends Model
 {

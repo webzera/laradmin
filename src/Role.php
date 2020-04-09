@@ -1,16 +1,16 @@
 <?php
 
-namespace App;
+namespace Webzera\Laradmin;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Permission;
+use Webzera\Laradmin\Permission;
 
 class Role extends Model
 {
     public function admins(){
-    	return $this->belongsToMany('App\Admin', 'user_role', 'role_id', 'admin_id');
+    	return $this->belongsToMany('Webzera\Laradmin\Admin', 'user_role', 'role_id', 'admin_id');
     }
     public function permissions(){
-    	return $this->belongsToMany('App\Permission', 'permission_roles', 'role_id', 'permission_id');
+    	return $this->belongsToMany('Webzera\Laradmin\Permission', 'permission_roles', 'role_id', 'permission_id');
     }
 }
