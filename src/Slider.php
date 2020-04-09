@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Webzera\Laradmin;
 
 use Illuminate\Database\Eloquent\Model;
 

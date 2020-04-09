@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Webzera\Laradmin\Http\Controllers;
 
 use Illuminate\Http\Request;
 // use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 
-use App\Page;
-use App\Menulist;
+use Webzera\Laradmin\Page;
+use Webzera\Laradmin\Menulist;
 
 class PageController extends Controller
 {
@@ -19,7 +19,7 @@ class PageController extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
-        $this->middleware('checkrole');
+        // $this->middleware('checkrole');
     }
     /**
      * Display a listing of the resource.

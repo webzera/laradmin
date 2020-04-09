@@ -24,11 +24,17 @@ class LaradminServiceProvider extends ServiceProvider
 		$bashPath = dirname(__DIR__,2);
 
 		$arrPublishable = [
+			'seeds' => [
+				"$bashPath/publishable/database/seeds" => database_path('seeds'),
+			],
 			'migrations' => [
 				"$bashPath/publishable/database/migrations" => database_path('migrations'),
 			],
 			'config' => [
 				"$bashPath/publishable/config/laradmin.php" => config_path('laradmin.php') 
+			],
+			'middleware' => [
+				"$bashPath/publishable/middleware/CheckRole.php" => app_path('Http/Middleware/CheckRole.php') 
 			]
 		];
 

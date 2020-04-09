@@ -8,11 +8,34 @@ Route::group(['namespace' => $namespace, 'prefix' => 'admin'], function(){
 
 	Route::GET('/login','LoginController@showLoginForm')->name('admin::login')->middleware('web'); //use middleware otherwise not workink
 
+	Route::POST('/login','LoginController@login')->middleware('web');
+
 	Route::GET('/password/reset','ForgotPasswordController@showLinkRequestForm')->name('admin::password.request')->middleware('web');
 
 	Route::POST('password/email','ForgotPasswordController@sendResetLinkEmail')->name('admin::password.email');
 
-	Route::POST('/password/reset','ResetPasswordController@reset')->name('admin.password.update');
+	Route::POST('/password/reset','ResetPasswordController@reset')->name('admin::password.update');
+
+	Route::GET('password/reset/{token}','Admin\ResetPasswordController@showResetForm')->name('admin::password.reset');
+
+	Route::resource('slider', 'SliderController');
+
+	Route::resource('page', 'PageController');
+
+
+	 //admin role
+// Route::get('admin/adminrolelist', 'Admin\RoleController@adminrolelist')->name('admin.adminrolelist');
+// Route::get('admin/createroleform', 'Admin\RoleController@createroleform')->name('admin.createroleform');
+// Route::post('admin/createrolestore', 'Admin\RoleController@createrolestore')->name('admin.createrolestore');
+// Route::post('admin/roleassign', 'Admin\RoleController@roleassign')->name('admin.roleassign');
+
+// //admin permission
+// Route::post('admin/permissionassign', 'Admin\PermissionController@permissionassign')->name('admin.permissionassign');
+// Route::get('admin/adminpermissionlist', 'Admin\PermissionController@adminpermissionlist')->name('admin.adminpermissionlist');
+
+// //Notification
+// Route::GET('admin/notification/allnotify','Admin\NotificationController@allnotify')->name('admin.allnotify');
+// Route::GET('admin/notification/viewnotify/{id}','Admin\NotificationController@viewnotify')->name('admin.viewnotify');
 });
 
 

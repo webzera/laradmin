@@ -14,20 +14,18 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('profile_image')->nullable();
-            $table->date('date_join');
-            $table->text('address');
-            $table->string('city');
-            $table->string('pincode');
-            $table->string('mobile_no');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Artisan::call('db:seed', [
+            '--class' => AdminsTableSeeder::class
+        ]);
     }
 
     /**
