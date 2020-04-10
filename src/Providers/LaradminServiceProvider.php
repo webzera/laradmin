@@ -35,6 +35,9 @@ class LaradminServiceProvider extends ServiceProvider
 			],
 			'middleware' => [
 				"$bashPath/publishable/middleware/CheckRole.php" => app_path('Http/Middleware/CheckRole.php') 
+			],
+			'public' => [
+				"$bashPath/publishable/public/vendor/laradmin" => public_path('vendor/laradmin') 
 			]
 		];
 

@@ -3,74 +3,68 @@
 </style>
 @endsection
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="{{ route('admin.home') }}" class="brand-link">
-      <img src="{{ asset('images/logo.jpg') }}" alt="Anwar" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">Techs</span>
-    </a>
+<div class="sidebar" data-color="purple" data-background-color="white" data-image="{{ asset('vendor/laradmin/img/sidebar-1.jpg') }}">
+  <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        {{-- <div class="image">
-          <img src="/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div> --}}
-        <div class="info">
-          <a href="{{ route('admin.home') }}" class="d-block">Admin Control Panel</a>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-               <?php
-                $routeArray = app('request')->route()->getAction();
-                $controllerAction = class_basename($routeArray['controller']);
-                list($controller, $action) = explode('@', $controllerAction);
-                ?>
-          <li class="nav-item has-treeview menu-open">
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('page.index') }}" class="nav-link <?php if($controller=='PageController') echo 'active' ?>">
-                  <i class="fa fa-laptop nav-icon"></i>
-                  <p>Pages</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('slider.index') }}" class="nav-link <?php if($controller=='SliderController') echo 'active' ?>">
-                  <i class="fa fa-laptop nav-icon"></i>
-                  <p>Sliders</p>
-                </a>
-              </li>
-
-              
-
-              <li class="nav-item">              
-                <a class="dropdown-item nav-link" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                <i class="fa fa-power-off nav-icon"></i><p>Logout</p>
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-                </form>
-              </li>
-              
-
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+    Tip 2: you can also add an image using data-image tag
+-->
+  <div class="logo"><a href="#" class="simple-text logo-normal">
+      Creative Tim
+    </a></div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li class="nav-item active  ">
+        <a class="nav-link" href="{{ route('admin::home') }}">
+          <i class="material-icons">dashboard</i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin::home') }}">
+          <i class="material-icons">person</i>
+          <p>User Profile</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin::home') }}">
+          <i class="material-icons">content_paste</i>
+          <p>Table List</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin::home') }}">
+          <i class="material-icons">library_books</i>
+          <p>Typography</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin::home') }}">
+          <i class="material-icons">bubble_chart</i>
+          <p>Icons</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin::home') }}">
+          <i class="material-icons">location_ons</i>
+          <p>Maps</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin::home') }}">
+          <i class="material-icons">notifications</i>
+          <p>Notifications</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin::home') }}">
+          <i class="material-icons">language</i>
+          <p>RTL Support</p>
+        </a>
+      </li>      
+    </ul>
+  </div>
+</div>
 
 @section('script')
 <script>

@@ -1,8 +1,21 @@
-<footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      <strong>developed by <a target="_blank" href="http://webzera.com">WebZera.com</a>.</strong>
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2019 St. Thomas School.</strong> All rights reserved.
-  </footer>
+<footer class="footer">
+<div class="container-fluid">
+  <nav class="float-left">
+    <ul>
+      <li>
+        <a href="http://webzera.com">
+          Webzera
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="copyright float-right">
+    &copy;
+    <script>
+      document.write(new Date().getFullYear())
+    </script>, made with <i class="material-icons">favorite</i> by
+    <a href="http://webzera.com" target="_blank">webzera</a>web development.
+  </div>
+  <!-- your footer here -->
+</div>
+</footer>

@@ -6,9 +6,14 @@ use App\Http\Controllers\controller;
 
 class LaradminController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth:admin');
+        // $this->middleware('checkrole');
+    }
 	public function index()
 	{
-		return view('admin::adminuser.adminlist');		
+		return view('admin::home');		
 	}
 
 	public function test()
