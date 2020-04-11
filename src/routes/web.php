@@ -16,7 +16,7 @@ Route::group(['namespace' => $namespace, 'prefix' => 'admin'], function(){
 
 	Route::POST('/password/reset','ResetPasswordController@reset')->name('admin::password.update');
 
-	Route::GET('password/reset/{token}','Admin\ResetPasswordController@showResetForm')->name('admin::password.reset');
+	Route::GET('password/reset/{token}','ResetPasswordController@showResetForm')->name('admin::password.reset');
 
 	Route::resource('slider', 'SliderController');
 

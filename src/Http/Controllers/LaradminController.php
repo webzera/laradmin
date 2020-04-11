@@ -3,11 +3,22 @@
 namespace Webzera\Laradmin\Http\Controllers;
 
 use App\Http\Controllers\controller;
+// use Illuminate\Support\Facades\Auth;
 
 class LaradminController extends Controller
 {
 	public function __construct()
     {
+    	// if(auth("admin"))
+     //    { 
+     //    	dd('cons');
+    	// }
+    	// else
+    	// {
+    	// 	dd('no');
+    	// }
+
+    	
         $this->middleware('auth:admin');
         // $this->middleware('checkrole');
     }
