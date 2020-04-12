@@ -8,17 +8,17 @@ Auth guard [admin] defined config/auth.php file
 -----------------------------------------------
 Laravel uses guards for authentication which allows you to manage multiple authenticated instances from multiple tables. To create a new guard open the auth.php from the config directory:
 'guards' => [
-	[...],
-	'admin' => [
+    [...],
+    'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
         ],
 ],
 'providers' => [
-	[...],
-	'admins' => [
+    [...],
+    'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'model' => Webzera\Laradmin\Admin::class,
         ],
 ],
 'passwords' => [
@@ -30,11 +30,21 @@ Laravel uses guards for authentication which allows you to manage multiple authe
         ],
     ],
 
+add this line to main route>web.php file
+
+# Route::get('/admin', 'AdminController@index')->name('admin::home');
+
+-> php composer.phar dump-autoload
+
 the database seeder file need to update so add force command
 -> php artisan vendor:publish --force
 
-
+In Http/Kenel.php add this line in
+protected $routeMiddleware = [
+    [...],
+    'checkrole' => \App\Http\Middleware\CheckRole::class,
+]
+-> php composer.phar dump-autoload //must use before migration
 -> php artisan migrate:fresh
 
-admin user email : johnszen@gmail.com
-admin password : password
+change mail credentials like [mailtrap] in .env file
